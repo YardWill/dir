@@ -1,0 +1,19 @@
+{
+  "name": "dir-create-structure",
+  "version": "1.0.0",
+  "description": "目录结构生成器",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://YardWill@github.com/YardWill/dir.git"
+  },
+  "author": "yard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YardWill/dir/issues"
+  },
+  "homepage": "https://github.com/YardWill/dir#readme"
+}
