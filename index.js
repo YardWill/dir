@@ -1,24 +1,21 @@
-// var path = require('path');
-
-// console.log(path.dirname(__dirname))
-
 var fs = require('fs');
 var path = require('path');
 var util = require('util')
+var tstr = '├── '
+var strNow = ''
 
 function walk(dir) {
-  fs.readdir(dir, function (err, files) {
-    files.forEach(function (e, i) {
-      var pathNow = path.join(dir, e);
-      var stats = fs.stat(pathNow, function (err, stats) {
-        if (stats.isDirectory()) {
-          walk(pathNow)
-        }
-      });
-      console.log(pathNow)
-    })
+  var files = fs.readdirSync(dir);
+  strNow = tstr + strNow
+  files.forEach(function (e, i) {
+    var pathNow = path.join(dir, e);
+    console.log(strNow + path.relative(dir,pathNow))
+    var stats = fs.statSync(pathNow);
+    if (stats.isDirectory()) {
+      walk(pathNow)
+      strNow = strNow.slice(4)
+    }
   })
 }
 
 walk(__dirname);
-
